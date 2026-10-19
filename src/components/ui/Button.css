@@ -1,0 +1,92 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition:
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn svg {
+  transition: transform var(--duration) var(--ease);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+.btn--lg {
+  min-height: 52px;
+  padding: 0.9rem 1.8rem;
+  font-size: var(--text-base);
+}
+
+.btn--sm {
+  min-height: 40px;
+  padding: 0.5rem 1.1rem;
+}
+
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+  box-shadow: 0 6px 18px rgb(221 170 66 / 0.35);
+}
+
+.btn--primary:hover {
+  background: #e5b754;
+  box-shadow: 0 10px 24px rgb(221 170 66 / 0.45);
+}
+
+.btn--green {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.btn--green:hover {
+  background: var(--color-green-light);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.btn--outline:hover {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.btn--light {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgb(255 255 255 / 0.7);
+}
+
+.btn--light:hover {
+  background: var(--color-white);
+  color: var(--color-green);
+  border-color: var(--color-white);
+}

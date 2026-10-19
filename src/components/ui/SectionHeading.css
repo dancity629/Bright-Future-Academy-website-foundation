@@ -1,0 +1,36 @@
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.section-heading > div:first-child {
+  max-width: 680px;
+}
+
+.section-heading .lead {
+  margin-bottom: 0;
+}
+
+.section-heading--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.section-heading--center > div:first-child {
+  margin-inline: auto;
+}
+
+.section-heading--center .eyebrow::after {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+}
+
+.section--green .section-heading .lead {
+  color: rgb(248 247 240 / 0.8);
+}

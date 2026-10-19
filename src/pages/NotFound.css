@@ -1,0 +1,16 @@
+.not-found {
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: var(--text-3xl);
+}
+
+.not-found__code {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 3rem + 8vw, 9rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-gold);
+}

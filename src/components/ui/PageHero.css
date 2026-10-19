@@ -1,0 +1,48 @@
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
+  color: var(--color-cream);
+  background:
+    radial-gradient(circle at 90% 0%, rgb(221 170 66 / 0.25), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgb(255 255 255 / 0.06), transparent 40%),
+    var(--color-green);
+}
+
+.page-hero h1 {
+  font-size: var(--text-3xl);
+  color: var(--color-white);
+}
+
+.page-hero .eyebrow {
+  color: var(--color-gold);
+}
+
+.page-hero__intro {
+  max-width: 680px;
+  margin: 0;
+  font-size: var(--text-lg);
+  color: rgb(248 247 240 / 0.82);
+}
+
+.page-hero__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-xs);
+  color: rgb(248 247 240 / 0.7);
+}
+
+.page-hero__crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.page-hero__crumbs a {
+  color: var(--color-gold);
+}
