@@ -13,7 +13,30 @@
     <title>Bright Future Academy | Nursery, Primary &amp; Secondary School in Lagos</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Replaced by the app on load. Only appears if JavaScript fails to run. -->
+      <div class="boot-fallback">
+        <p><strong>Bright Future Academy</strong></p>
+        <p>This site needs JavaScript and an up-to-date browser. Please refresh the page, or try Chrome, Safari or Edge.</p>
+      </div>
+    </div>
+    <style>
+      .boot-fallback {
+        max-width: 32rem;
+        margin: 20vh auto 0;
+        padding: 0 1rem;
+        font-family: system-ui, sans-serif;
+        color: #263238;
+        text-align: center;
+        opacity: 0;
+        animation: boot-show 0s 3s forwards;
+      }
+      @keyframes boot-show {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -10,9 +10,12 @@ import Contact from './pages/Contact'
 import Portal from './pages/Portal'
 import NotFound from './pages/NotFound'
 
+// No trailing slash, so both /repo and /repo/ match on GitHub Pages.
+const BASENAME = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
+
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={BASENAME}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
