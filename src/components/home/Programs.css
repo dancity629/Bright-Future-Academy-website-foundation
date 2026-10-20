@@ -12,16 +12,11 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition:
-    opacity 700ms var(--ease),
-    transform 700ms var(--ease),
-    box-shadow var(--duration) var(--ease);
+  transition: box-shadow var(--duration) var(--ease);
 }
 
-.program-card.is-visible:hover {
-  transform: translateY(-6px);
+.program-card:hover {
   box-shadow: var(--shadow-lg);
-  transition-delay: 0ms;
 }
 
 .program-card__media {

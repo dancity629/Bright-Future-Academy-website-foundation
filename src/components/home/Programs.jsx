@@ -4,6 +4,7 @@ import SectionHeading from '../ui/SectionHeading'
 import SmartImage from '../ui/SmartImage'
 import Reveal from '../ui/Reveal'
 import Icon from '../ui/Icon'
+import { hoverLift } from '../../utils/motion'
 import { programs } from '../../data/programs'
 import './Programs.css'
 
@@ -20,7 +21,7 @@ export default function Programs() {
         />
         <div className="programs__grid">
           {programs.map((program, index) => (
-            <Reveal as="article" key={program.id} className="program-card" delay={index * 120}>
+            <Reveal as="article" key={program.id} className="program-card" delay={index * 120} whileHover={hoverLift}>
               <div className="program-card__media">
                 <SmartImage src={program.image} alt={`${program.title} pupils at Bright Future Academy`} fallbackLabel={program.title} />
                 <span className="program-card__ages">{program.ages}</span>

@@ -5,6 +5,7 @@ import Reveal from '../ui/Reveal'
 import Button from '../ui/Button'
 import { latestNews } from '../../data/news'
 import { formatDate } from '../../utils/formatDate'
+import { hoverLift } from '../../utils/motion'
 import './LatestNews.css'
 
 export default function LatestNews() {
@@ -23,7 +24,7 @@ export default function LatestNews() {
         </SectionHeading>
         <div className="latest-news__grid">
           {latestNews.map((item, index) => (
-            <Reveal as="article" key={item.id} className="news-card" delay={index * 100}>
+            <Reveal as="article" key={item.id} className="news-card" delay={index * 100} whileHover={hoverLift}>
               <div className="news-card__date" aria-hidden="true">
                 <span>{formatDate(item.date, { day: '2-digit' })}</span>
                 <span>{formatDate(item.date, { month: 'short' })}</span>

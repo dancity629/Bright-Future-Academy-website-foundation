@@ -17,16 +17,7 @@
     background-color var(--duration) var(--ease),
     color var(--duration) var(--ease),
     border-color var(--duration) var(--ease),
-    transform var(--duration) var(--ease),
     box-shadow var(--duration) var(--ease);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(0);
 }
 
 .btn svg {

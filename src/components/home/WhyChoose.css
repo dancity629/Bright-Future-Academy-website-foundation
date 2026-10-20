@@ -20,8 +20,6 @@
   border: 1px solid rgb(248 247 240 / 0.12);
   border-radius: var(--radius-lg);
   transition:
-    opacity 700ms var(--ease),
-    transform 700ms var(--ease),
     background-color var(--duration) var(--ease),
     border-color var(--duration) var(--ease);
 }

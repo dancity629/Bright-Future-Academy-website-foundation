@@ -1,5 +1,14 @@
 import { Link } from 'react-router-dom'
+import { m } from 'motion/react'
 import './Button.css'
+
+const MotionLink = m.create(Link)
+
+const interactions = {
+  whileHover: { y: -2 },
+  whileTap: { scale: 0.97 },
+  transition: { type: 'spring', stiffness: 400, damping: 25 },
+}
 
 /**
  * Renders a router <Link> when `to` is given, an <a> for `href`,
@@ -16,23 +25,23 @@ export default function Button({ to, href, variant = 'primary', size = 'md', ico
 
   if (to) {
     return (
-      <Link to={to} className={classes} {...rest}>
+      <MotionLink to={to} className={classes} {...interactions} {...rest}>
         {content}
-      </Link>
+      </MotionLink>
     )
   }
 
   if (href) {
     return (
-      <a href={href} className={classes} {...rest}>
+      <m.a href={href} className={classes} {...interactions} {...rest}>
         {content}
-      </a>
+      </m.a>
     )
   }
 
   return (
-    <button type="button" className={classes} {...rest}>
+    <m.button type="button" className={classes} {...interactions} {...rest}>
       {content}
-    </button>
+    </m.button>
   )
 }

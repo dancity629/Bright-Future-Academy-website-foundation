@@ -112,25 +112,3 @@
   border: 1px dashed var(--color-gold-dark);
   border-radius: var(--radius-pill);
 }
-
-/* Scroll-reveal animation, toggled by <Reveal> */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 700ms var(--ease),
-    transform 700ms var(--ease);
-  transition-delay: var(--reveal-delay, 0ms);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}

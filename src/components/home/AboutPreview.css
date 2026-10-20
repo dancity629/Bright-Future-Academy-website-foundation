@@ -106,3 +106,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Keeps the sliding secondary image from widening the page before it settles */
+.about-preview {
+  overflow-x: clip;
+}

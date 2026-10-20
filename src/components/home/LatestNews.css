@@ -13,8 +13,6 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition:
-    opacity 700ms var(--ease),
-    transform 700ms var(--ease),
     box-shadow var(--duration) var(--ease),
     border-color var(--duration) var(--ease);
 }

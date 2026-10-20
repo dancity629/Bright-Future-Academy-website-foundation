@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { m, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowRight, CalendarCheck } from 'lucide-react'
 import Button from '../ui/Button'
 import SmartImage from '../ui/SmartImage'
@@ -12,12 +14,19 @@ const steps = [
 ]
 
 export default function AdmissionsCta() {
+  const ref = useRef(null)
+  const reduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.2, 1])
+
   return (
-    <section className="section admissions-cta" aria-labelledby="admissions-cta-title">
+    <section className="section admissions-cta" aria-labelledby="admissions-cta-title" ref={ref}>
       <div className="container">
         <Reveal className="admissions-cta__panel">
           <div className="admissions-cta__bg" aria-hidden="true">
-            <SmartImage src={images.admissions} alt="" />
+            <m.div className="admissions-cta__bg-inner" style={reduceMotion ? undefined : { scale: bgScale }}>
+              <SmartImage src={images.admissions} alt="" />
+            </m.div>
           </div>
           <div className="admissions-cta__content">
             <p className="eyebrow">Admissions 2027/2028</p>

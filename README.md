@@ -24,7 +24,7 @@ When deploying, configure the host to serve `index.html` for all routes
 
 ## Stack
 
-React 19 + Vite, React Router, Lucide icons, plain CSS, self-hosted fonts
+React 19 + Vite, React Router, Motion (animations), Lucide icons, plain CSS, self-hosted fonts
 (Fraunces and Plus Jakarta Sans via Fontsource).
 
 ## Structure
@@ -55,3 +55,11 @@ staff photos are added in `src/data/staff.js`.
   placeholder pages for all other routes.
 - Next phases: About, Academics, Staff, Admissions, News & Events, Contact,
   Student Portal preview.
+
+## Animations
+
+Animations use [Motion](https://motion.dev) (`motion/react`), loaded through
+`LazyMotion` to keep the bundle small. Shared timings live in
+`src/utils/motion.js`. `MotionConfig reducedMotion="user"` plus
+`useReducedMotion` checks switch off movement for visitors who prefer reduced
+motion.

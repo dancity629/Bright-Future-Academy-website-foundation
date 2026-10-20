@@ -14,8 +14,17 @@
   gap: clamp(2rem, 1rem + 4vw, 5rem);
 }
 
-.hero__content {
-  animation: rise 800ms var(--ease) both;
+.hero__word {
+  display: inline-block;
+  overflow: hidden;
+  /* room for descenders and the italic overhang inside the mask */
+  padding: 0 0.06em 0.12em;
+  margin: 0 -0.06em -0.12em;
+  vertical-align: top;
+}
+
+.hero__word-inner {
+  display: inline-block;
 }
 
 .hero h1 em {
@@ -65,7 +74,7 @@
 
 .hero__media {
   position: relative;
-  animation: rise 900ms 120ms var(--ease) both;
+  isolation: isolate;
 }
 
 .hero__image-frame {
@@ -78,8 +87,13 @@
   box-shadow: var(--shadow-lg);
 }
 
-.hero__media::before {
-  content: '';
+.hero__image-inner {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.hero__outline {
   position: absolute;
   inset: 24px -18px -18px 24px;
   z-index: -1;
@@ -89,6 +103,9 @@
 
 .hero__badge {
   position: absolute;
+}
+
+.hero__badge-float {
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -96,7 +113,6 @@
   background: var(--color-surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  animation: float 6s ease-in-out infinite;
 }
 
 .hero__badge strong {
@@ -118,7 +134,6 @@
 .hero__badge--bottom {
   right: -20px;
   bottom: 12%;
-  animation-delay: -3s;
 }
 
 .hero__badge-icon {
@@ -134,19 +149,6 @@
 .hero__badge-icon--gold {
   color: var(--color-charcoal);
   background: var(--color-gold);
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-}
-
-@keyframes float {
-  50% {
-    transform: translateY(-8px);
-  }
 }
 
 @media (max-width: 960px) {
@@ -174,11 +176,11 @@
     flex: 1 1 100%;
   }
 
-  .hero__media::before {
+  .hero__outline {
     inset: 16px -8px -10px 16px;
   }
 
-  .hero__badge {
+  .hero__badge-float {
     padding: var(--space-2) var(--space-3);
   }
 

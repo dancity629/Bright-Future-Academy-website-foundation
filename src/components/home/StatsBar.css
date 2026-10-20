@@ -35,7 +35,7 @@
   color: var(--color-gold);
 }
 
-.stats__item span {
+.stats__item > span {
   margin-top: var(--space-1);
   font-size: var(--text-sm);
 }
